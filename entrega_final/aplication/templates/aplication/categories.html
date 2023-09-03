@@ -1,0 +1,55 @@
+{% extends 'aplication/index.html' %}
+{% load static %}
+
+{% block titulo%}
+    <h1> Todos los post </h1>
+
+{% endblock titulo %}
+    
+
+
+{% block content %}
+<div>
+    <h1>Lista de Posteos</h1>
+    <a href="{% url 'post'%}"
+    class="btn btn-primary btn-sm">
+    <i class="fa fa-plus fa-lg" title="New Record"> </i>
+    </a>
+</div>
+<table class= "table table-striped">
+    <tbody>
+    {% for posteo in categoria %}
+    <tr>
+        <td>
+            <p><strong>{{ posteo.id }}</strong></p>
+        </td>
+        <td>
+            <p><strong>{{ posteo.titulo }}</strong></p>
+        </td>
+        <td>   
+            <p><strong>Contenido:</strong> {{ posteo.contenido }}</p>
+        </td>
+        <td>    
+            <p><strong>Autor:</strong> {{ posteo.autor }}</p>
+        </td>
+        <td>    
+            <p><strong>Fecha de Publicación:</strong> {{ posteo.fecha }}</p>
+        </td>
+        <td>    
+            <p><strong>Categoria:</strong> {{ posteo.categorias }}</p>
+        </td>
+        <td>
+           
+            <a  href="{% url 'updatePost' posteo.id %}" class="btn btn-primary"style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+            ><i class="fa fa-edit fa-sm" title="Edit Record"></i></a>
+           
+            <a href="{%url 'deletePost' posteo.id %}" class="btn btn-danger" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+            ><i class="fa fa-trash fa-sm" title="Delete Record"></i></a>
+        </td>
+    </tr>    
+    
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content %}

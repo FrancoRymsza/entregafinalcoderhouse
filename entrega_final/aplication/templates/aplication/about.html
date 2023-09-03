@@ -1,0 +1,26 @@
+{% extends 'aplication/index.html' %}
+{% load static %}
+
+
+{% block titulo %}
+    <h1>Acerca de mí</h1>
+
+{% endblock%}
+
+{% block content%}
+    <div class="about-container">
+        <div class="about-text">
+            
+            <p> Hola, mi nombre es Franco Rymsza. Soy un argentino de 25 años de edad, nacido en Buenos Aires. Este es mi proyecto final el cual voy a estar presentando como entrega en Coderhouse y utilizando
+            para mi portfolio. Soy estudiante de la tecnicatura de programación en UNAHUR, mi objetivo es poder dar un cambio a mi estilo de vida. 
+            En la actualidad me desempeño como herrero/mueblero, tengo un negocio hace 4 años y me sustento gracias a eso. </p>
+        </div>
+    </div>
+    
+    <div id="miImagen">
+        <img src="{% static 'C:\Users\Usuario\Desktop\ENTREGA-FINAL-CODERHOUSE\entrega_final\aplication\static\aplication\assets\img\foto1.jpg' %}" alt="My Image" class="imagenUno">
+    </div>
+{% endblock %}
+
+
+

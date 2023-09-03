@@ -1,0 +1,22 @@
+{% extends 'aplication/index.html' %}
+{% load static %}
+
+{% block titulo%}
+    <h1> Registro </h1>
+
+{% endblock titulo %}
+    
+
+
+{% block content %}
+
+<h2>Registro</h2>
+<form action="" method="POST">
+    {% csrf_token %} 
+    <table>
+        {{ form2.as_table }}
+    </table>
+    <input type="submit" value="Enviar">
+</form>
+
+{% endblock content %}

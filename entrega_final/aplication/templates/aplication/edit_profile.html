@@ -1,0 +1,22 @@
+{% extends 'aplication/index.html' %}
+{% load static %}
+
+{% block titulo%}
+    <h1> editar perfil </h1>
+
+{% endblock titulo %}
+    
+
+
+{% block content %}
+
+<h2>editar perfil</h2>
+<form action="" method="POST">
+    {% csrf_token %} 
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="Enviar">
+</form>
+
+{% endblock content %}
